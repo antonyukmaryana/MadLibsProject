@@ -10,8 +10,15 @@ namespace MadLibs.Controllers
        [Route("/form")]
         public ActionResult MadLibsForm() { return View(); }
 
-        [Route("/madlibs")]
-        public ActionResult MadLibs(string adjective, string pluralnoun,string noun,string adverb,string number,string pasttenseverb, string estadjective)
+        [Route("/FunParkstory")]
+        public ActionResult FunParkstory() { return View(); }
+
+        [Route("/Arcadestory")]
+        public ActionResult Arcadestory() { return View(); }
+        
+
+        [Route("/FunPark")]
+        public ActionResult FunPark(string adjective, string pluralnoun,string noun,string adverb,string number,string pasttenseverb, string estadjective)
         {
             MadLibsVariable myMadLibsVariable = new MadLibsVariable();
             myMadLibsVariable.Adjective = adjective;
@@ -22,6 +29,18 @@ namespace MadLibs.Controllers
             myMadLibsVariable.PastTenseVerb = pasttenseverb;
             myMadLibsVariable.EstAdjective = estadjective;
             
+            return View(myMadLibsVariable);
+        }
+
+        [Route("/Arcade")]
+        public ActionResult Arcade(string pluralnoun, string noun,  string ingverb, string verb)
+        {
+            MadLibsVariable myMadLibsVariable = new MadLibsVariable();
+            myMadLibsVariable.PluralNoun = pluralnoun;
+            myMadLibsVariable.Noun = noun;
+            myMadLibsVariable.Verb = verb;
+            myMadLibsVariable.IngVerb = ingverb;
+
             return View(myMadLibsVariable);
         }
     }

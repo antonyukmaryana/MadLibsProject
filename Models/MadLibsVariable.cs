@@ -9,6 +9,9 @@ namespace MadLibs.Models
         public string Number { get; set; }
         public string PastTenseVerb { get; set; }
         public string EstAdjective { get; set; }
+        public string IngVerb { get; set; }
+        public string Verb { get; set; }
+
 
     }
 }
