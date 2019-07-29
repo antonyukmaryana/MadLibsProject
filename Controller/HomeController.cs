@@ -1,22 +1,28 @@
 using Microsoft.AspNetCore.Mvc;
-using ProjectName.Models;
+using MadLibs.Models;
 
-namespace ProjectName.Controllers
+namespace MadLibs.Controllers
 {
     public class HomeController : Controller
     {
         
 
-       [Route("/")]
-        public ActionResult ProjectForm() { return View(); }
+       [Route("/form")]
+        public ActionResult MadLibsForm() { return View(); }
 
-        [Route("/projectname")]
-        public ActionResult ProjectName(string recipient)
+        [Route("/madlibs")]
+        public ActionResult MadLibs(string adjective, string pluralnoun,string noun,string adverb,string number,string pasttenseverb, string estadjective)
         {
-            LetterVariable myLetterVariable = new LetterVariable();
-            myLetterVariable.Recipient = recipient;
+            MadLibsVariable myMadLibsVariable = new MadLibsVariable();
+            myMadLibsVariable.Adjective = adjective;
+            myMadLibsVariable.PluralNoun = pluralnoun;
+            myMadLibsVariable.Noun = noun;
+            myMadLibsVariable.Adverb = adverb;
+            myMadLibsVariable.Number = number;
+            myMadLibsVariable.PastTenseVerb = pasttenseverb;
+            myMadLibsVariable.EstAdjective = estadjective;
             
-            return View(myLetterVariable);
+            return View(myMadLibsVariable);
         }
     }
 }

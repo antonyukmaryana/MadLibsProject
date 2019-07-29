@@ -4,8 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ProjectName
-{
+namespace MadLibs{
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -26,8 +25,8 @@ namespace ProjectName
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-            name: "default",
-            template: "{controller=Home}/{action=Index}/{id?}");
+                name: "default",
+                template: "{controller=Home}/{action=Index}/{id?}");
             });
 
             app.Run(async (context) =>
